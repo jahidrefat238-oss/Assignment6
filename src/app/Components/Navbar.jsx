@@ -4,7 +4,7 @@ import Link from "next/link";
 const Navbar = () => {
     const link = (
         <>
-            <li><Link href="/" className="rounded-full bg-[#18220b] px-5 py-2 text-sm font-semibold text-[#c6ff00]" > Workouts</Link></li>
+            <li><Link href="/workouts" className="rounded-full bg-[#18220b] px-5 py-2 text-sm font-semibold text-[#c6ff00]" > Workouts</Link></li>
             <li><Link href="/myPlan" className="px-5 py-2 text-sm text-gray-400 hover:text-white"> My Plan </Link> </li>
         </>
     );
