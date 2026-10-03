@@ -4,14 +4,14 @@ import Link from "next/link";
 const Navbar = () => {
     const link = (
         <>
-            <li><Link href="/workouts" className="rounded-full bg-[#18220b] px-5 py-2 text-sm font-semibold text-[#c6ff00]" > Workouts</Link></li>
+            <li><Link href="/workouts" className="rounded-full px-5 py-2 text-sm hover: bg-[#18220b]font-semibold text-[#c6ff00]" > Workouts</Link></li>
             <li><Link href="/myPlan" className="px-5 py-2 text-sm text-gray-400 hover:text-white"> My Plan </Link> </li>
         </>
     );
 
     return (
-        <div className="container mx-auto px-4">
-            <div className="navbar min-h-[88px] border-b border-[#1f2024] bg-[#0d0e10] px-6">
+        <div className=" border-b border-[#1f2024]">
+            <div className="navbar min-h-[88px] bg-[#0d0e10] px-6">
 
                 {/* Left Side */}
                 <div className="navbar-start">
