@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import { Context } from "../context/PlanContext";
-
-const MyPlanCard = ({ workout }) => {
+import { toast } from "react-toastify";
+const MyPlanCard = ({ workout, type }) => {
     const { todaysPlan, setTodaysPlan, saveForLater, setSaveForLater } = useContext(Context);
     const { name, image, equipment, duration, caloriesBurned, rating } = workout;
     const handleDone = () => {
@@ -12,6 +12,7 @@ const MyPlanCard = ({ workout }) => {
         );
 
         setTodaysPlan(updatedPlan);
+        toast.success("Workout completed!");
     };
     const handleRemove = () => {
         const updatedPlan = todaysPlan.filter(
@@ -25,6 +26,7 @@ const MyPlanCard = ({ workout }) => {
         );
 
         setSaveForLater(updatedSaved);
+        toast.success("Workout removed!");
     };
     return (
         <div className="flex items-center gap-5 rounded-xl border border-[#24262c] bg-[#15161b] p-4">
@@ -53,16 +55,16 @@ const MyPlanCard = ({ workout }) => {
             {/* Actions */}
             <div className="flex items-center gap-2">
                 <Link href={`/workouts/${workout.id}`}>
-                    <button className="rounded-lg border border-[#30333b] px-4 py-2 text-[10px] font-bold text-gray-300">
+                    <button className="rounded-lg border border-[#30333b] px-4 py-2 text-[10px] font-bold text-gray-300 transition hover:scale-105 hover:bg-[#50601a] cursor-pointer">
                         View Details
                     </button>
                 </Link>
-
-                <button onClick={handleDone} className="rounded-lg bg-[#c6ff00] px-4 py-2 text-[10px] font-bold text-black">
-                    Mark as Done
-                </button>
-
-                <button  onClick={handleRemove} className="px-2 text-gray-500 hover:text-red-400">✕</button>
+                {type !== "saved" && (
+                    <button onClick={handleDone} className="rounded-lg bg-[#c6ff00] px-4 py-2 text-[10px] font-bold text-black transition hover:scale-105 hover:bg-[#d4ff4d] cursor-pointer">
+                        Mark as Done
+                    </button>
+                )}
+                <button onClick={handleRemove} className="px-2 text-gray-500 hover:text-red-400 cursor-pointer">✕</button>
             </div>
         </div>
     );

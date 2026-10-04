@@ -78,6 +78,8 @@ const MyPlan = () => {
                                 <MyPlanCard
                                     key={workout.id}
                                     workout={workout}
+                                    type="saved"
+
                                 />
                             ))}
 
@@ -85,7 +87,7 @@ const MyPlan = () => {
 
                     ) : (
 
-                       <EmptyPlan type="saved" />
+                        <EmptyPlan type="saved" />
 
                     )
 
