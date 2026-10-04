@@ -5,6 +5,7 @@ export const Context = createContext({})
 const PlanContext = ({ children }) => {
     const [todaysPlan, setTodaysPlan] = useState([])
     const [saveForLater, setSaveForLater] = useState([])
+    
     const sharedData = {
         saveForLater, setSaveForLater, todaysPlan, setTodaysPlan
     }

@@ -1,7 +1,8 @@
 import Image from "next/image";
+import ButtonAction from "./ButtonAction";
 
-const WorkoutDetailsCard = ({workout}) => {
-    const{id, name, image, muscleGroups, difficulty,rating, duration, caloriesBurned, equipment,sets,reps,description,instructions}=workout
+const WorkoutDetailsCard = ({ workout }) => {
+    const { id, name, image, muscleGroups, difficulty, rating, duration, caloriesBurned, equipment, sets, reps, description, instructions } = workout
     return (
         <div className="mx-auto max-w-7xl px-4 py-8">
             <div className="grid gap-8 lg:grid-cols-2">
@@ -9,7 +10,7 @@ const WorkoutDetailsCard = ({workout}) => {
                     <Image src={image} alt={name} width={700} height={700} className=" rounded-xl w-full object-contain" ></Image>
                 </div>
 
-             
+
                 <div>
                     <h1 className="text-3xl font-extrabold uppercase text-white">
                         {name}
@@ -82,7 +83,7 @@ const WorkoutDetailsCard = ({workout}) => {
 
                     </div>
 
-                    
+
                     <div className="mt-5">
                         <h2 className="text-sm font-bold uppercase text-white"> Instructions</h2>
 
@@ -91,15 +92,17 @@ const WorkoutDetailsCard = ({workout}) => {
                             <li>2.  {instructions[1]}</li>
                             <li>3.  {instructions[2]}</li>
                             <li>4.  {instructions[3]}</li>
-                            
+
                         </ol>
                     </div>
 
                     {/* Buttons */}
-                    <div className="mt-6 flex gap-3">
+                    {/* <div className="mt-6 flex gap-3">
                         <button className="rounded-lg bg-[#c6ff00] px-5 py-3 text-xs font-bold text-black"> Add to today's plan</button>
 
-                        <button className="rounded-lg border border-[#30333b] px-5 py-3 font-bold text-xs text-gray-300">Save for later</button></div>
+                        <button className="rounded-lg border border-[#30333b] px-5 py-3 font-bold text-xs text-gray-300">Save for later</button>
+                    </div> */}
+                    <ButtonAction workout={workout}></ButtonAction>
                 </div>
             </div>
         </div>
