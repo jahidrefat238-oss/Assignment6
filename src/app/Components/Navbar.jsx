@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavbarCounter from "./NavbarCounter";
+import NavLink from "./NavLink";
 
 
 const Navbar = () => {
     const link = (
         <>
-            <li><Link href="/workouts" className="rounded-full px-5 py-2 text-sm hover: bg-[#18220b]font-semibold text-[#c6ff00]" > Workouts</Link></li>
-            <li><Link href="/myPlan" className="px-5 py-2 text-sm text-gray-400 hover:text-white"> My Plan </Link> </li>
+            <li><NavLink href="/workouts"> Workouts </NavLink></li>
+
+            <li> <NavLink href="/myPlan">My Plan </NavLink></li>
         </>
     );
 
@@ -79,21 +82,17 @@ const Navbar = () => {
                     >
                         <span>Plan</span>
 
-                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#c6ff00] px-1 text-xs font-bold text-black">
-                            0
-                        </span>
+                        <NavbarCounter type="plan"></NavbarCounter>
                     </Link>
 
                     {/* Saved */}
                     <Link
-                        href="/saved"
+                        href="/myPlan"
                         className="flex items-center gap-2 text-sm text-gray-400 hover:text-white"
                     >
                         <span>Saved</span>
 
-                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-[#34363b] px-1 text-xs text-gray-300">
-                            0
-                        </span>
+                        <NavbarCounter type="saved"></NavbarCounter>
                     </Link>
 
                 </div>

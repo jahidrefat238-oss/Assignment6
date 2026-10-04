@@ -15,6 +15,10 @@ const ButtonAction = ({ workout }) => {
             toast.info("Workout is already added!");
             return;
         }
+        if (todaysPlan.length >= 5) {
+            toast.info("You can add maximum 5 workouts!");
+            return;
+        }
         setTodaysPlan([...todaysPlan, workout])
         toast.success("Workout added to today's plan!");
     }

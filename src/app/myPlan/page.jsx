@@ -6,6 +6,7 @@ import MyPlanCard from "../Components/MyPlanCard";
 import PlanMetrics from "../Components/PlanMatrices";
 import PlanTabs from "../Components/PlanTabs";
 import EmptyPlan from "../Components/EmptyPlan";
+import PlanSort from "../Components/PlanSort";
 
 const MyPlan = () => {
     const { todaysPlan, saveForLater } = useContext(Context);
@@ -51,16 +52,7 @@ const MyPlan = () => {
 
                     todaysPlan.length > 0 ? (
 
-                        <div className="space-y-4">
-
-                            {todaysPlan.map((workout) => (
-                                <MyPlanCard
-                                    key={workout.id}
-                                    workout={workout}
-                                />
-                            ))}
-
-                        </div>
+                        <PlanSort workouts={todaysPlan} />
 
                     ) : (
 
@@ -72,18 +64,10 @@ const MyPlan = () => {
 
                     saveForLater.length > 0 ? (
 
-                        <div className="space-y-4">
-
-                            {saveForLater.map((workout) => (
-                                <MyPlanCard
-                                    key={workout.id}
-                                    workout={workout}
-                                    type="saved"
-
-                                />
-                            ))}
-
-                        </div>
+                        <PlanSort
+                            workouts={saveForLater}
+                            type="saved"
+                        />
 
                     ) : (
 

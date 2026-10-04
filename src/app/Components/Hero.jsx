@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
     return (
@@ -15,9 +17,12 @@ const Hero = () => {
                     <p className="mt-5 max-w-[520px] text-sm text-gray-400">
                         FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.</p>
 
-                    <button className="mt-6 rounded-md bg-[#c6ff00] px-5 py-3 text-xs font-bold text-black hover:bg-[#b8f000]">
-                        BROWSE WORKOUTS
-                    </button>
+                    <Link href="#library">
+                        <button className="mt-6 flex items-center gap-2 rounded-md bg-[#c6ff00] px-5 py-3 text-xs font-bold text-black hover:font-bold cursor-pointer hover:-translate-y-1">
+                            BROWSE WORKOUTS
+                            <ArrowDown size={14} />
+                        </button>
+                    </Link>
                 </div>
 
                 <div>
