@@ -7,6 +7,16 @@ import MyPlanCard from "../Components/MyPlanCard";
 const MyPlan = () => {
     const { todaysPlan } = useContext(Context);
 
+    const totalMinutes = todaysPlan.reduce(
+        (total, workout) => total + workout.duration,
+        0
+    );
+
+    const totalCalories = todaysPlan.reduce(
+        (total, workout) => total + workout.caloriesBurned,
+        0
+    );
+
     return (
         <main className="mx-auto w-full max-w-7xl px-6 py-8">
 
@@ -42,7 +52,7 @@ const MyPlan = () => {
                     </p>
 
                     <h2 className="mt-1 text-3xl font-bold text-white">
-                        0
+                        {totalMinutes}
                     </h2>
                 </div>
 
@@ -53,7 +63,7 @@ const MyPlan = () => {
                     </p>
 
                     <h2 className="mt-1 text-3xl font-bold text-white">
-                        0
+                        {totalCalories}
                     </h2>
                 </div>
 
