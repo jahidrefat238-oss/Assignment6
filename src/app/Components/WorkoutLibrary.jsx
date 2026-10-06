@@ -6,7 +6,7 @@ const getWorkouts = async () => {
 const WorkoutLibrary = async () => {
     const workouts = await getWorkouts()
     return (
-        <div className="mx-auto mt-10 max-w-[1200px]">
+        <div id="library" className="mx-auto mt-10 max-w-[1200px]">
             <div>
                 <h2 className="text-3xl font-bold text-white">
                     THE LIBRARY
@@ -16,7 +16,7 @@ const WorkoutLibrary = async () => {
                     Twelve lifts covering every major muscle group.
                 </p>
             </div >
-            <div className="mt-6 grid w-full grid-cols-3 gap-5">
+            <div className="mt-6 grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {workouts.map(workout => <WorkoutCard key={workout.id} workoutProps={workout}></WorkoutCard>)}
             </div>
 

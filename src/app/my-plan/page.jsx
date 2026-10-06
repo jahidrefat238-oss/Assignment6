@@ -12,16 +12,6 @@ const MyPlan = () => {
     const { todaysPlan, saveForLater } = useContext(Context);
     const [activeTab, setActiveTab] = useState("today");
 
-    const totalMinutes = todaysPlan.reduce(
-        (total, workout) => total + workout.duration,
-        0
-    );
-
-    const totalCalories = todaysPlan.reduce(
-        (total, workout) => total + workout.caloriesBurned,
-        0
-    );
-
     return (
         <main className="mx-auto w-full max-w-7xl px-6 py-8">
 
@@ -38,7 +28,7 @@ const MyPlan = () => {
 
 
             {/* Metrics */}
-            <PlanMetrics todaysPlan={activeTab === "today" ? todaysPlan : saveForLater}></PlanMetrics>
+           <PlanMetrics todaysPlan={todaysPlan} />
 
 
             {/* Tabs + Sort */}

@@ -9,7 +9,7 @@ const Navbar = () => {
         <>
             <li><NavLink href="/workouts"> Workouts </NavLink></li>
 
-            <li> <NavLink href="/myPlan">My Plan </NavLink></li>
+            <li> <NavLink href="/my-plan">My Plan </NavLink></li>
         </>
     );
 
@@ -77,7 +77,7 @@ const Navbar = () => {
 
                     {/* Plan */}
                     <Link
-                        href="/myPlan"
+                        href="/my-plan"
                         className="flex items-center gap-2 text-sm text-gray-400 hover:text-white"
                     >
                         <span>Plan</span>
@@ -87,7 +87,7 @@ const Navbar = () => {
 
                     {/* Saved */}
                     <Link
-                        href="/myPlan"
+                        href="/my-plan"
                         className="flex items-center gap-2 text-sm text-gray-400 hover:text-white"
                     >
                         <span>Saved</span>

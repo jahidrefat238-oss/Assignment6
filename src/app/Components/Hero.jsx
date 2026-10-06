@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 const Hero = () => {
     return (
         <div className="mx-auto mt-9 max-w-[1200px] rounded-xl border border-[#24262c] bg-[#15161b] px-10 py-10">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
                 <div>
                     <p className="mb-5 text-xs font-bold tracking-wider text-[#c6ff00]">
                         WORKOUT LIBRARY
@@ -30,7 +30,9 @@ const Hero = () => {
                         alt="Workout"
                         width={280}
                         height={280}
-                        className="h-[280px] w-[280px] object-contain"></Image>
+                        className="h-52 w-52 object-contain sm:h-64 sm:w-64 lg:h-[280px] lg:w-[280px]">
+
+                    </Image>
                 </div>
 
             </div>
